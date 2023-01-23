@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post" class="form form-register" autocomplete="off">
+	<h1>Register</h1>
+	{% csrf_token %}
+	{{form.as_p}}
+	<button type="submit" class="submit">Register</button>
+</form>
+{% endblock %}
