@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="ball"></div>
 <form method="post" class="form form-register" autocomplete="off">
 	<h1>Register</h1>
 	{% csrf_token %}
 	{{form.as_p}}
 	<button type="submit" class="submit">Register</button>
 </form>
+<div class="ball"></div>
 {% endblock %}
