@@ -30,6 +30,7 @@ if (loginLink){
     });
 }
 
+
 function togglePlay(video) {
     if (video.paused || video.ended) {
       video.play();
@@ -43,3 +44,4 @@ for (let video of videos){
         togglePlay(e.target)
     })
 }
+

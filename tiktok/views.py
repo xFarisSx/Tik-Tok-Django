@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from . import forms
 from . import models
 
@@ -8,10 +9,63 @@ from . import models
 @login_required(redirect_field_name='login')
 def home(request):
 	videos = models.Video.objects.all()[::-1][0:11]
-	if request.method == 'GET':
-		video = request.GET['video']
-		print(video)
 	return render(request, 'main/home.html', {'videos':videos})
+
+@login_required(redirect_field_name='login')
+def profile(request, id):
+	user = User.objects.get(id=id)
+	return render(request, 'main/profile.html', {
+		'user':user
+	})
+
+@login_required(redirect_field_name='login')
+def search(request):
+	q = request.GET.get('q')
+	instead = ''
+	if q:
+		users = User.objects.filter(username__icontains=q)
+		if not users:
+			users = None
+			instead = 'Not Found!'
+
+	else : 
+		users = None
+		instead = 'Search'
+	return render(request, 'main/search.html', {'users':users, 'instead':instead})
+
+@login_required(redirect_field_name='login')
+def video(request, id):
+	video = models.Video.objects.get(id=id)
+	return render(request, 'main/video.html', {
+		'video':video
+	})
+
+@login_required(redirect_field_name='login')
+def like(request):
+	if request.method == 'GET':
+		video_id = request.GET.get('video', False)
+		if video_id:
+			video = models.Video.objects.get(pk=video_id)
+			like = video.like_set.filter(user=request.user)
+			if like:
+				like.delete()
+			else:
+				video.like_set.create(user=request.user, video=video)
+				video.save()
+
+	return redirect('home')
+@login_required(redirect_field_name='login')
+def comment(request, id):
+	video=models.Video.objects.get(id=id)
+	if request.method == "GET":
+		comment_text = request.GET.get('text', False)
+		if comment_text:
+			video.comment_set.create(comment=comment_text, user=request.user, video=video)
+			video.save()
+
+	return render(request, 'main/comment.html', {
+		'video':video
+	})
 
 @login_required(redirect_field_name='login')
 def create(request):

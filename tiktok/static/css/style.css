@@ -27,6 +27,9 @@ body {
 	max-width: 1000px;
 }
 
+
+
+
 .title {
 	position: absolute;
 	z-index: 999;
@@ -311,6 +314,7 @@ nav .links .link:nth-child(2):hover {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 
 .form {
@@ -357,7 +361,7 @@ nav .links .link:nth-child(2):hover {
 }
 
 .form-register{
-	min-height: 500px;
+	min-height: 600px;
 }
 .form-login{
 	min-height: 340px;
@@ -371,13 +375,14 @@ nav .links .link:nth-child(2):hover {
 	font-size: 35px;
 	letter-spacing: 1px;
 }
+
 .form .form-input {
 	background-color: #fff;
 	outline: none;
 	border: 1px solid #aaa;
 	padding: 10px 30px;
-	left: 50%;
-	transform: translateX(-50%);
+	/* left: 50%; */
+	/* transform: translateX(-50%); */
 	margin: 5px;
 	border-radius: 8px;
 	font-family: cursive;
@@ -387,6 +392,8 @@ nav .links .link:nth-child(2):hover {
 	font-weight: 800;
 	
 }
+
+
 .form label {
 	display: flex;
 	letter-spacing: 1px;
@@ -432,4 +439,190 @@ nav .links .link:nth-child(2):hover {
 }
 .form .submit:focus {
 	outline: none;
+}
+
+.form-comment{
+	max-height: 550px;
+}
+
+.input-field {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	right: 0;
+	justify-content: stretch;
+}
+.input-field .submit{
+	border-left: none;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	width: 27%;
+	margin:unset;
+	height: 47px;
+}
+.input-field .submit:hover{
+	box-shadow: none;
+}
+.input-field input{
+	border: 2px dashed rgb(218, 20, 60);
+	border-right: none;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding: 10px;
+	width: 73%;
+	font-size: 13px;
+}
+.input-field input:focus{
+	outline: none;
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	/* background-color: rgb(250, 117, 144); */
+	top: 100px;
+	width: 100%;
+	height: calc(100% - 145px);
+	overflow: scroll;
+	position: absolute;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+}
+
+.comments .comment {
+	display: flex;
+	padding: 15px;
+	border-bottom: 1.5px dashed crimson;
+	width: 100%;
+	color: #fff;
+	position: relative;
+}
+
+.comment .username {
+	color: red;
+	text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.2);
+	font-weight: 900;
+	font-size: 20px;
+	margin-right: 20px;
+	text-align: center;
+
+}
+.comment .comment-text {
+	font-size: 13px;
+	text-align: start;
+	color: #000;
+	position: relative;
+	top: 6.5px;
+}
+
+.form-comment .liked {
+	color: red;
+}
+
+.card {
+	width: 500px;
+	height: 500px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 5px;
+	position: relative;
+}
+
+.user-info {
+	border-bottom: 1.5px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0px;
+	left: 70px;
+	height: 70px;
+	justify-content: center;
+	width: calc(100% - 70px);
+	align-items: flex-start;
+}
+.user-info .username {
+	color: crimson;
+	font-weight: 900;
+	font-size: 25px;
+}
+
+.user-info .email {
+	color: #aaa;
+	font-size: 15px;
+}
+
+.profile-pic{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+
+}
+
+.tiktok-info {
+	left: 75%;
+	right: 10px;
+	/* align-items: flex-end; */
+	border-bottom: none;
+}
+.following span ,.followers span,.likes span{
+	color: red;
+	font-weight: 900;
+	font-size: 16px;
+	
+}
+
+.user-videos{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	align-items: flex-start;
+	gap: 2px;
+	justify-content: flex-start;
+	height: calc(100% - 75px);
+	overflow: scroll;
+	width: 100%;
+}
+
+.user-video{
+	background-color: #ddd;
+}
+
+.video-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.video-card .video {
+	justify-content: center;
+	align-items: center;
+	height: 90%;
+	width: 80%;
+}
+
+.search-form {
+	min-width: 500px;
+	min-height: 500px;
+}
+
+.users{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.users .user {
+	position: relative;
+}
+
+.user .user-info {
+	position: absolute;
+	top: 0px;
+	left: 70px;
 }

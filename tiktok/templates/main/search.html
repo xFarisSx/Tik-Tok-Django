@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %} 
+<div class="ball"></div>
+<div class="ball"></div>
+<form method="get" class="search-form form">
+    <div class="users">
+        {% if users %}
+            {% for user in users %}
+                <a class="user" href="{% url 'profile' user.id %}">
+                    <img src="{% static 'images/image.jpg' %}" alt="" class="profile-pic">
+                    <div class="user-info">
+                        <div class="username">{{user.username}}</div>
+                        <div class="email">{{user.email}}</div>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <h1>{{instead}}</h1>
+        {% endif %}
+    </div>
+    <div class="input-field">
+        <input type="text" name="q">
+        <button type="submit" class="submit">Search</button>
+    </div>
+</form>
+{% endblock %}

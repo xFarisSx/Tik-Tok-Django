@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %} 
+<h1>Profile</h1>
+<div class="ball"></div>
+<div class="ball"></div>
+<div class="card">
+    <img src="{% static 'images/image.jpg' %}" alt="" class="profile-pic">
+    <div class="user-info">
+        <div class="username">{{user.username}}</div>
+        <div class="email">{{user.email}}</div>
+    </div>
+    <div class="user-info tiktok-info">
+        <div class="following"><span>Following:</span> 1000</div>
+        <div class="followers"><span>Followers:</span> 10</div>
+        <div class="likes"><span>Likes:</span> 100</div>
+    </div>
+    <div class="user-videos">
+        {% for video in user.video_set.all %}
+        <a href="{% url 'video' video.id %}">
+            <video class="user-video" width="158px" height="158px">
+                <source src="{{MEDIA_URL}}/{{video.file.name}}" type="video/mp4">
+            </video>
+        </a>
+            
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

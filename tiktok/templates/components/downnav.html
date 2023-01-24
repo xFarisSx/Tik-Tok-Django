@@ -1,9 +1,9 @@
 
 <nav class="nav downnav">
         <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="{% url 'search' %}"><i class="fa-solid fa-magnifying-glass"></i></a>
         <a href="{% url 'create' %}" class="add"><i class="fa-brands fa-tiktok"></i></a>
         <a href="#"><i class="fa-solid fa-envelope"></i></a>
-        <a href="#"><i class="fa-solid fa-user"></i></a>
+        <a href="{% url 'profile' user.id %}"><i class="fa-solid fa-user"></i></a>
 </nav>
 

@@ -12,3 +12,11 @@ class Video(models.Model):
 class Like(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     video = models.ForeignKey(Video, on_delete= models.CASCADE)
+class Comment(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    video = models.ForeignKey(Video, on_delete= models.CASCADE)
+    comment = models.CharField(null=False, max_length=250)
+
+class CommentLike(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment,on_delete=models.CASCADE)

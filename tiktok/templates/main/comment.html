@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="ball"></div>
+<div class="ball"></div>
+<form method="get" class="form form-comment" autocomplete="off" enctype="multipart/form-data">
+	<h1>Comment</h1>
+    <div class="comments">
+        {% for comment in video.comment_set.all %}
+            <div class="comment">
+                <p class="username">{{comment.user.username}}</p>
+                <p class="comment-text">{{comment.comment}}</p>
+            </div>
+        {% endfor %}
+    </div>
+	{% csrf_token %}
+    <div class="input-field">
+        <input type="text" name="text" class="">
+	    <button type="submit" class="submit">Comment</button>
+    </div>
+</form>
+{% endblock %}
