@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="ball"></div>
+<div class="ball"></div>
+<form method="post" class="form form-create" autocomplete="off" enctype="multipart/form-data">
+	<h1>Create</h1>
+	{% csrf_token %}
+    {{form}}
+	<button type="submit" class="submit">Create</button>
+</form>
+{% endblock %}

@@ -5,18 +5,22 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
 	<title>Tiktok</title>
 </head>
 <body>
-
-	{% include 'components/navbar.html' %}
+	{% if not user.is_authenticated %}
+		{% include 'components/navbar.html' %}
+	{% endif %}
 	<div class="main">
 		{% block content %}
 		{% endblock %}
 	</div>
 	
-
+	{%if user.is_authenticated%}
+		{% include 'components/downnav.html' %}
+	{% endif %}
 	<script src="{% static "javascript/script.js" %}"></script>
 </body>
 </html>

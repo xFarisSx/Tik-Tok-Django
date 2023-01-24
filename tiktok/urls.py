@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
 	path('', views.redirectHome),
-	path('home/', views.home,name='home')
+	path('home/', views.home,name='home'),
+	path('create/', views.create,name='create'),
 ]

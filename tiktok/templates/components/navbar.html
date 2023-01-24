@@ -1,9 +1,15 @@
 
-	<nav class="nav">
+	<nav class="nav" style="{% if user.is_authenticated %}
+	justify-content:center;
+{% else %}
+	justify-content: space-between;
+{% endif %}">
 		<a href="{% url 'home' %}" class="nav-name">TikTok</a>
-		<div class="links">
-			<a href="{% url 'login' %}" class="link" id="loginLink">Login</a>
-			<a href="{% url 'register' %}" class="link" id="registerLink">Register</a>
-		</div>
+		{% if not user.is_authenticated %}
+			<div class="links">
+				<a href="{% url 'login' %}" class="link" id="loginLink">Login</a>
+				<a href="{% url 'register' %}" class="link" id="registerLink">Register</a>				
+			</div>
+		{% endif %}
 	</nav>
 

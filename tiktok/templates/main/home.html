@@ -1,4 +1,35 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% block content %} 
+    <div class="videos">
+        {% for video in videos %}
+        <div class="video-container">
+            <h1 class="title">{{video.title}}</h1>
+            <a class="picture" href="#"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt=""></a>
 
-{% block content %}
+            <div class="info">
+                <p class="likes">0</p>
+                <p class="comments">0</p>
+            </div>
+            <div class="video-buttons">
+                <form method="get">
+                    <input type="hidden" value="{% video %}" name="video">
+                    <button type="submit" class="like liked"><i class="fas fa-heart"></i></button>
+                    <button type="submit" class="comment"><i class="fas fa-comment"></i></button>
+                    <button type="submit" class="share"><i class="fas fa-share"></i></button>
+                </form>
+                
+                <button class="music"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt=""></a>
+                    <div class="circle"></div>
+                </button>
+            </div>
+            <div class="description">
+                <h2 class="username">{{video.user.username}}</h2>
+                <p class="songname"><i class="fas fa-music"></i> {{video.songname}}</p>
+            </div>
+            <video class="video" width="100%" height="400px">
+                <source src="{{MEDIA_URL}}/{{video.file.name}}" type="video/mp4">
+            </video>
+        </div> 
+        {% endfor %} 
+    </div>
 {% endblock %}
