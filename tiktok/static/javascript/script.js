@@ -45,3 +45,4 @@ for (let video of videos){
     })
 }
 
+document.querySelector('.followed').textContent = 'Unfollow'

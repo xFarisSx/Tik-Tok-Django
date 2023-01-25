@@ -1,10 +1,11 @@
 {% extends 'base.html' %} 
+{% load static %}
 {% block content %} 
     <div class="videos">
         {% for video in videos %}
         <div class="video-container">
             <h1 class="title">{{video.title}}</h1>
-            <a class="picture" href="{% url 'profile' video.user.id %}"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt=""></a>
+            <a class="picture" href="{% url 'profile' video.user.id %}"><img src="{% if video.user.profile.image %}{{MEDIA_URL}}/{{video.user.profile.image}}{% else %}{% static 'images/image.jpg' %}{% endif %}" alt=""></a>
 
             <div class="info">
                 <p class="likes">{{video.like_set.count}}</p>
@@ -18,7 +19,7 @@
                     <button type="submit" class="comment"><a href="{% url 'comment' video.id %}"><i class="fas fa-comment"></i></a></button>
                     <button type="submit" class="share"><i class="fas fa-share"></i></button>
                 
-                <button class="music"><img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt=""></a>
+                <button class="music"><img src="{% if video.user.profile.image %}{{MEDIA_URL}}/{{video.user.profile.image}}{% else %}{% static 'images/image.jpg' %}{% endif %}" alt=""></a>
                     <div class="circle"></div>
                 </button>
             </div>

@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="ball"></div>
-<form method="post" class="form form-register" autocomplete="off">
+<form method="post" class="form form-register" autocomplete="off" enctype='multipart/form-data'>
 	<h1>Register</h1>
 	{% csrf_token %}
 	{{form.as_p}}

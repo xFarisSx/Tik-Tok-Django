@@ -8,6 +8,7 @@ attrs = {
 }
 
 class Register(UserCreationForm):
+	photo = forms.ImageField(required=False)
 	email = forms.EmailField(required=True, widget=forms.EmailInput(attrs=attrs))
 	password1 = forms.CharField(
 		strip=False,

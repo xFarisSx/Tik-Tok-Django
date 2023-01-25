@@ -538,10 +538,10 @@ nav .links .link:nth-child(2):hover {
 	flex-direction: column;
 	position: absolute;
 	top: 0px;
-	left: 70px;
+	left: 90px;
 	height: 70px;
 	justify-content: center;
-	width: calc(100% - 70px);
+	width: calc(100% - 90px);
 	align-items: flex-start;
 }
 .user-info .username {
@@ -559,7 +559,7 @@ nav .links .link:nth-child(2):hover {
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
-
+	margin: 5px;
 }
 
 .tiktok-info {
@@ -624,5 +624,39 @@ nav .links .link:nth-child(2):hover {
 .user .user-info {
 	position: absolute;
 	top: 0px;
-	left: 70px;
+	left: 90px;
+}
+
+.down-btns{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	padding: 10px;
+	height: 45px;
+}
+
+.down-btns .submit{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, calc(-50% - 6px) );
+	background-color: crimson;
+	border: none;
+	color: #fff;
+}
+
+.logout {
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.submit.followed {
+	background-color: #fff;
+	border: 1.5px dashed crimson;
+	color: crimson;
 }

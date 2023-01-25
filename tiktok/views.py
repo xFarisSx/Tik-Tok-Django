@@ -14,8 +14,23 @@ def home(request):
 @login_required(redirect_field_name='login')
 def profile(request, id):
 	user = User.objects.get(id=id)
+	likes = 0
+	for video in user.video_set.all():
+		for like in video.like_set.all():
+			likes+=1
+	if request.method == 'POST':
+		if request.POST.get('follow'):
+			follow = user.profile.follower_set.filter(follower=request.user)
+			if follow:
+				follow.delete()
+				request.user.profile.following_set.filter(following=user).delete()
+			else:
+				user.profile.follower_set.create(follower=request.user, profile=user.profile)
+				request.user.profile.following_set.create(following=user, profile=request.user.profile)
+
 	return render(request, 'main/profile.html', {
-		'user':user
+		'puser':user,
+		'likes':likes
 	})
 
 @login_required(redirect_field_name='login')

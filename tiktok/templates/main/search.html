@@ -8,7 +8,7 @@
         {% if users %}
             {% for user in users %}
                 <a class="user" href="{% url 'profile' user.id %}">
-                    <img src="{% static 'images/image.jpg' %}" alt="" class="profile-pic">
+                    <img src="{% if user.profile.image %}{{MEDIA_URL}}/{{user.profile.image}}{% else %}{% static 'images/image.jpg' %}{% endif %}" alt="" class="profile-pic">
                     <div class="user-info">
                         <div class="username">{{user.username}}</div>
                         <div class="email">{{user.email}}</div>

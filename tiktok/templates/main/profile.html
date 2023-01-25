@@ -5,18 +5,18 @@
 <div class="ball"></div>
 <div class="ball"></div>
 <div class="card">
-    <img src="{% static 'images/image.jpg' %}" alt="" class="profile-pic">
+    <img src="{% if puser.profile.image %}{{MEDIA_URL}}/{{puser.profile.image}}{% else %}{% static 'images/image.jpg' %}{% endif %}" alt="" class="profile-pic">
     <div class="user-info">
-        <div class="username">{{user.username}}</div>
-        <div class="email">{{user.email}}</div>
+        <div class="username">{{puser.username}}</div>
+        <div class="email">{{puser.email}}</div>
     </div>
     <div class="user-info tiktok-info">
-        <div class="following"><span>Following:</span> 1000</div>
-        <div class="followers"><span>Followers:</span> 10</div>
-        <div class="likes"><span>Likes:</span> 100</div>
+        <div class="following"><span>Following:</span> {{puser.profile.following_set.count}}</div>
+        <div class="followers"><span>Followers:</span> {{puser.profile.follower_set.count}}</div>
+        <div class="likes"><span>Likes:</span> {{likes}}</div>
     </div>
     <div class="user-videos">
-        {% for video in user.video_set.all %}
+        {% for video in puser.video_set.all %}
         <a href="{% url 'video' video.id %}">
             <video class="user-video" width="158px" height="158px">
                 <source src="{{MEDIA_URL}}/{{video.file.name}}" type="video/mp4">
@@ -24,6 +24,15 @@
         </a>
             
         {% endfor %}
+        
     </div>
+    <form method="post" class="form form-follow down-btns">
+        {% csrf_token %}
+        {% if user.id == puser.id %}
+        <a href="{% url 'logout' %}" class='logout submit'>Logout</a>
+        {% else %}
+            <button class="submit follow-submit {% for follow in puser.profile.follower_set.all %} {% if follow.follower == user %} followed {% endif %} {% endfor %}" name="follow" value="follow">Follow</button>
+        {% endif %}
+    </form>
 </div>
 {% endblock %}
