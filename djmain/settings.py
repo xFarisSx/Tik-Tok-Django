@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-0(md79!80cr5chi@dp8pn)^(%3icg59-bv5crgj(0iu$dr8d!v
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-ALLOWED_HOSTS = ['*','https://toktik.up.railway.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['toktik.up.railway.app', '127.0.0.1']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
 '*'
@@ -42,7 +41,7 @@ CORS_ALLOW_METHODS = [
 ]
 CSRF_TRUSTED_ORIGINS=[
     'https://toktik.up.railway.app',
-    '.localhost', '127.0.0.1', '[::1]'
+    'http://127.0.0.1'
 ]
 # Application definition
 
@@ -102,10 +101,17 @@ DATABASES = {
         'NAME': 'tiktok',
         'USER': 'postgres',
         'PASSWORD': 'Knight2006',
-        'HOST':'localhost',
-        'PORT':''
+        'HOST':'127.0.0.1',
+        'PORT':'5432'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+#         'NAME': 'sqlite3.db',              
+#     }
+# }
 
 
 # Password validation
