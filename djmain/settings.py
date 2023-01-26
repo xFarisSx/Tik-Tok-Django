@@ -48,6 +48,9 @@ CORS_ALLOW_METHODS = [
 'POST',
 'PUT',
 ]
+CSRF_TRUSTED_ORIGINS=[
+    'https://web-production-f609.up.railway.app'
+]
 # Application definition
 
 INSTALLED_APPS = [
