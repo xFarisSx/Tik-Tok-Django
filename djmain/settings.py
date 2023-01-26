@@ -49,7 +49,8 @@ CORS_ALLOW_METHODS = [
 'PUT',
 ]
 CSRF_TRUSTED_ORIGINS=[
-    'https://toktik.up.railway.app'
+    'https://toktik.up.railway.app',
+    'https://*.toktik.up.railway.app'
 ]
 # Application definition
 
