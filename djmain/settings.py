@@ -110,6 +110,8 @@ DATABASES = {
         'NAME': 'tiktok',
         'USER': 'postgres',
         'PASSWORD': 'Knight2006',
+        'HOST':'127.0.0.1',
+        'PORT':'5432'
     }
 }
 
