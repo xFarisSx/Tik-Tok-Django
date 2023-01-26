@@ -1,0 +1,1 @@
+web: gunicorn djmain.wsgi --log-file -
