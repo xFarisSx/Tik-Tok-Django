@@ -29,15 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
-'accept',
-'accept-encoding',
-'authorization',
-'content-type',
-'dnt',
-'origin',
-'user-agent',
-'x-csrftoken',
-'x-requested-with',
+'*'
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
@@ -50,7 +42,6 @@ CORS_ALLOW_METHODS = [
 ]
 CSRF_TRUSTED_ORIGINS=[
     'https://toktik.up.railway.app',
-    'https://*.toktik.up.railway.app'
 ]
 # Application definition
 
@@ -106,12 +97,12 @@ WSGI_APPLICATION = 'djmain.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tiktok',
         'USER': 'postgres',
         'PASSWORD': 'Knight2006',
         'HOST':'localhost',
-        'PORT':'5432'
+        'PORT':''
     }
 }
 
