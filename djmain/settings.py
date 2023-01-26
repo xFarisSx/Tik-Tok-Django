@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0(md79!80cr5chi@dp8pn)^(%3icg59-bv5crgj(0iu$dr8d!v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','https://toktik.up.railway.app', 'localhost', '127.0.0.1']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
 '*'
