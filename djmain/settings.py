@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0(md79!80cr5chi@dp8pn)^(%3icg59-bv5crgj(0iu$dr8d!v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -140,3 +140,8 @@ LOGOUT_REDIRECT_URL = 'login'
 
 MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
 MEDIA_URL= "/media/"
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-f609.up.railway.app'
+]
