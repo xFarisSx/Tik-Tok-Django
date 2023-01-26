@@ -9,7 +9,7 @@
     <div class="comments">
         {% for comment in video.comment_set.all %}
             <div class="comment">
-                <p class="username"><a class="username-link"  href="{% url 'profile' comment.user.id %}">{{comment.user.username}}</a></p>
+                <p class="username">{{comment.user.username}}</p>
                 <p class="comment-text">{{comment.comment}}</p>
             </div>
         {% endfor %}

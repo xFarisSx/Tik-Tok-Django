@@ -7,10 +7,10 @@ class Profile(models.Model):
     image = models.ImageField(upload_to='profile_pics')
 
 class Follower(models.Model):
-    follower = models.OneToOneField(User,on_delete=models.CASCADE, null=True)
+    follower = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE,  null=True)
     
 class Following(models.Model):
-    following = models.OneToOneField(User,on_delete=models.CASCADE,  null=True)
+    following = models.ForeignKey(User,on_delete=models.CASCADE,  null=True)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE,  null=True)
     
