@@ -8,4 +8,4 @@ attrs = {
 class UploadFileForm(forms.Form):
     title = forms.CharField(max_length=50, required=True, widget=forms.TextInput(attrs=attrs))
     songname = forms.CharField(max_length=50,required=True, widget=forms.TextInput(attrs=attrs))
-    file = forms.FileField(required=True)
+    file = forms.FileField(required=True, widget=forms.FileInput(attrs={'accept':"video/mp4,video/x-m4v,video/*"}))

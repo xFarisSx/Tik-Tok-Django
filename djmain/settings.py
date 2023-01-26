@@ -106,6 +106,8 @@ DATABASES = {
     }
 }
 
+DATABASE_URL = 'postgresql://postgres:7wJq47oqitp0IdqAJAUF@containers-us-west-115.railway.app:5534/railway'
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
