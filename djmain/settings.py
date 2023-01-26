@@ -42,6 +42,7 @@ CORS_ALLOW_METHODS = [
 ]
 CSRF_TRUSTED_ORIGINS=[
     'https://toktik.up.railway.app',
+    '.localhost', '127.0.0.1', '[::1]'
 ]
 # Application definition
 
