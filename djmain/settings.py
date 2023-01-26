@@ -33,6 +33,9 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
 'https://web-production-f609.up.railway.app/'
 )
+CSRF_TRUSTED_ORIGINS = [
+    'https://web-production-f609.up.railway.app/'
+]
 
 # Application definition
 
