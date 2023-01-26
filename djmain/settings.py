@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'djmain.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tiktok',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Knight2006',
-        'HOST':'127.0.0.1',
-        'PORT':'5432'
+        'PASSWORD': '7wJq47oqitp0IdqAJAUF',
+        'HOST':'containers-us-west-115.railway.app',
+        'PORT':'5534'
     }
 }
 
