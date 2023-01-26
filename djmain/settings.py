@@ -106,11 +106,11 @@ WSGI_APPLICATION = 'djmain.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'tiktok',
         'USER': 'postgres',
         'PASSWORD': 'Knight2006',
-        'HOST':'postgres',
+        'HOST':'localhost',
         'PORT':''
     }
 }
