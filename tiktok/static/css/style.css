@@ -501,7 +501,7 @@ nav .links .link:nth-child(2):hover {
 	position: relative;
 }
 
-.comment .username {
+.comment .username{
 	color: red;
 	text-shadow: 0px 0px 5px rgba(255, 0, 0, 0.2);
 	font-weight: 900;
@@ -510,6 +510,7 @@ nav .links .link:nth-child(2):hover {
 	text-align: center;
 
 }
+
 .comment .comment-text {
 	font-size: 13px;
 	text-align: start;
@@ -660,3 +661,4 @@ nav .links .link:nth-child(2):hover {
 	border: 1.5px dashed crimson;
 	color: crimson;
 }
+
