@@ -12,7 +12,8 @@
                 <p class="comment-count">{{video.comment_set.count}}</p>
             </div>
             <div class="video-buttons">
-                <form method="get" action="{% url 'like' %}">
+                <form method="get" action="{% url 'like' %}"> 
+                    {% csrf_token %}
                     <input type="hidden" value="{{video.id}}" name="video">
                     <button type="submit" class="like {% for like in video.like_set.all %} {% if like.user == user %} liked {% endif %} {% endfor %}"><i class="fas fa-heart"></i></button>
                 </form>

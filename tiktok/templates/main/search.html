@@ -4,6 +4,7 @@
 <div class="ball"></div>
 <div class="ball"></div>
 <form method="get" class="search-form form">
+    {% csrf_token %}
     <div class="users">
         {% if users %}
             {% for user in users %}
