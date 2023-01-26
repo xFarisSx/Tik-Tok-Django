@@ -24,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0(md79!80cr5chi@dp8pn)^(%3icg59-bv5crgj(0iu$dr8d!v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['toktik.up.railway.app', '127.0.0.1']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
 '*'
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'djmain.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': '7wJq47oqitp0IdqAJAUF',
